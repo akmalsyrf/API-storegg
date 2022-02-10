@@ -1,9 +1,17 @@
 const mongoose = require("mongoose");
-let categorySchema = mongoose.Schema({
-  name: {
+let nominalSchema = mongoose.Schema({
+  coinQTY: {
+    type: Number,
+    default: 0,
+  },
+  coinName: {
     type: String,
-    required: [true, "Nama kategory harus diisi"],
+    required: [true, "Nama koin harus diisi"],
+  },
+  price: {
+    type: Number,
+    default: 0,
   },
 });
 
-module.exports = mongoose.model("Category", categorySchema);
+module.exports = mongoose.model("Nominal", nominalSchema);
