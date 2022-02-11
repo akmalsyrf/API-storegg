@@ -21,7 +21,8 @@
                                 <span class="badge badge-warning"><%= voucher[i].nominals[j].coinName %> <%= voucher[i].nominals[j].coinQTY %> </span>
                               <% } %>
                           </td>
-                          <td><% if(voucher[i].status == "Y"){ %> 
+                          <td>
+                            <% if(voucher[i].status == "Y"){ %> 
                             <span class="badge badge-success">Aktif</span>
                             <% } else { %>
                               <span class="badge badge-danger">Tidak ktif</span>
