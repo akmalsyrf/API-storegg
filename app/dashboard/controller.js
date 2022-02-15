@@ -3,7 +3,7 @@ module.exports = {
     try {
       res.render("index", {
         name: req.session.user.name,
-        title: "Halaman Dashboard",
+        title: "Dashboard",
       });
     } catch (error) {
       console.log(error);

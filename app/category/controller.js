@@ -8,7 +8,7 @@ module.exports = {
 
       const alert = { message: alertMesaage, status: alertStatus };
       const category = await Category.find();
-      res.render("admin/category/view_category", { category, alert });
+      res.render("admin/category/view_category", { category, alert, title: "Kategori", name: req.session.user.name });
     } catch (error) {
       req.flash("alertMessage", `${error.message}`);
       req.flash("alertStatus", "danger");
@@ -17,7 +17,7 @@ module.exports = {
   },
   viewCreate: async (req, res) => {
     try {
-      res.render("admin/category/create");
+      res.render("admin/category/create", { title: "Tambah kategori", name: req.session.user.name });
     } catch (error) {
       req.flash("alertMessage", `${error.message}`);
       req.flash("alertStatus", "danger");
@@ -47,6 +47,8 @@ module.exports = {
 
       res.render("admin/category/edit", {
         category,
+        title: "Edit kategori",
+        name: req.session.user.name,
       });
     } catch (error) {
       req.flash("alertMessage", `${error.message}`);
