@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index");
-});
+const { index } = require("./controller");
+const { isLoginAdmin } = require("../middleware/auth");
+
+router.use(isLoginAdmin);
+router.get("/", index);
 
 module.exports = router;
