@@ -48,7 +48,6 @@ let transactionSchema = mongoose.Schema(
         type: Number,
         required: [true, "nomor telepon harus diisi"],
         maxLength: [15, "nomor telepon harus antara 9-15 karakter"],
-        maxLength: [9, "nomor telepon harus antara 9-15 karakter"],
       },
     },
     category: {
